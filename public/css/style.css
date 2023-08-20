@@ -1,0 +1,609 @@
+*,body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito Sans Regular', sans-serif;
+}
+
+header{
+    background-color:#d8d8d8;
+    padding: 20px;
+    text-align: center;
+}
+
+footer{
+    height: 350px;
+    width: 100%;
+    background-color: gray;
+}
+
+a{
+    text-decoration: none;
+    outline: none;
+    color: black;
+}
+select,a,button{
+    cursor: pointer;
+}
+select{
+    border-radius: 15px;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    padding: 5px;
+    margin-left:10px;
+}
+
+.display-flex{
+    display: flex;
+    justify-content: space-between;
+}
+.display-flex-column-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-produtos{
+    display: block;
+    margin-left: 25px;
+    width: 85%;
+}
+.container-loja{
+    display: flex;
+}
+
+.oferta{
+    margin: 50px;
+    display: flex;
+}
+.oferta div{
+    margin: 0 30px;
+}
+
+.categorias{
+    margin:50px;
+    display: flex;
+    justify-content:space-between;
+    overflow-x: scroll;
+}
+.categorias div{
+    border-radius: 50%;
+    margin: 15px;
+}
+
+.categorias .categoria-produto .div-size{
+    height: 50px;
+    width: 50px;
+    background-color: gray; 
+    padding: 30px;
+}
+.categorias .categoria-produto h3{
+    text-align: center;
+    margin-top: 15px;
+}
+.categorias .categoria-produto .camiseta{
+    background-image: url("/img/modelo-camiseta-branca.jpg");
+    background-size: 265px 320px;
+    background-repeat: no-repeat;
+    background-position:-80px -70px;
+}
+.categorias .categoria-produto .calca{
+    background-image: url("/img/modelo-calça-jeans.jpg");
+    background-size: 205px 260px;
+    background-repeat: no-repeat;
+    background-position:-45px -145px;
+}
+.categorias .categoria-produto .calcado{
+    background-image: url("/img/modelo-tenis.jpg");
+    background-size: 245px 300px;
+    background-repeat: no-repeat;
+    background-position:-25px -195px;
+}
+.categorias .categoria-produto .calcao{
+    background-image: url("/img/modelo-calção-de-praia.jpg");
+    background-size: 345px 400px;
+    background-repeat: no-repeat;
+    background-position:-119px -195px;
+}
+.categorias .categoria-produto .vestido{
+    background-image: url("/img/modelo-vestido.jpg");
+    background-size: 245px 300px;
+    background-repeat: no-repeat;
+    background-position:-55px -75px;
+}
+.categorias .categoria-produto .regata{
+    background-image: url("/img/modelo-regata.jpg");
+    background-size: 245px 300px;
+    background-repeat: no-repeat;
+    background-position:-85px -140px;
+}
+
+.destaque{
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.produto{
+    height: 427px;
+    width: 300px;
+    border: 1px #cbcbcb solid;
+}
+.produto #dados{
+    margin:15px 0px;
+    height: 100%;
+}
+
+.linkssaibamais{
+    background-color: orange;
+    margin-top: 15px;
+    height: 550px;
+    display: flex;
+    color: white;
+    margin-bottom: 100px;
+}
+.linkssaibamais .texto{
+    margin-top: 65px;
+    margin-left: 50px;
+    width: 40%;
+}
+.linkssaibamais .texto h2{
+    font-size: 70px;
+}
+.linkssaibamais .texto h4{
+    margin-top:25px;
+    color: gray;
+}
+.linkssaibamais .image{
+    background-image: url("/img/R.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 60%;
+}
+
+.filtro{
+    display: block;
+    background-color: #d8d8d8;
+    padding: 15px;
+    width: 15%;
+    height: 1700px;
+}
+
+.searchInput{
+    display: flex;
+    justify-content: right;
+    margin-top: 15px;
+}
+.searchInput input{
+    border: none;
+    width: 350px;
+    padding: 15px;
+    outline: none;
+    border-bottom: 1px solid gray;
+}
+.searchInput button{
+    border: none;
+    padding: 15px;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+.searchInput button:hover{
+    filter: invert(50%);
+}
+
+
+.itens{
+    display: flex;
+    flex-wrap: wrap;
+}
+.filtro a{
+    margin-top: 15px;
+}
+.filtro div{
+    width: 100%;
+}
+.filtro div select,.filtro div input,.filtro div h2,.filtro div h3{
+    width: 100%;
+}
+.preco-escolha{
+    display: block;
+}
+
+.venda-produto{
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px 50px 50px;
+}
+.venda-produto p{
+    color: gray;
+}
+
+.produto-buttom{
+    text-align: left;
+    background-color: white;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+.produto-buttom div .imagem-produto-destaque{
+    height: 270px;
+    width: 100%;
+}
+.produto-buttom #dados{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+}
+.produto-buttom #dados p{
+    font-size: 40px;
+}
+.produto-buttom #dados p,.produto-buttom #dados h3{
+    margin: 0 15px;
+}
+
+#em-destaque{
+    font-size: 40px;
+    margin-left: 25px;
+}
+.produto-descricao{
+    width: 20%;
+    margin: 0 25px;
+}
+.produto-subimagem{
+    margin: 0 15px;
+}
+.produto-imagens{
+    margin: 0 15px;
+}
+.produto-preco{
+    margin: 0 55px;
+    width: 20%;
+}
+.botao-comprar{
+    border:none;
+    border-radius: 25px;
+    background-color: #69ff00;
+    padding: 8px;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+.botao-comprar:hover{
+    background-color:black;
+    color:white;
+}
+.botao-adicionar-carinho{
+    border:1px solid black;
+    border-radius: 25px;
+    background-color: transparent;
+    padding: 8px;
+    width: 100%;
+}
+.botao-adicionar-carinho:hover{
+    background-color: black;
+    color: white;
+    border: none;
+}
+.arrow{
+    height: 15px;
+    width: 15px;
+}
+.arrow-inverted{
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+}
+.arrow-inverted:active{
+    -moz-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+}
+
+.comentarios-enter{
+    display: flex;
+    margin-top: 15px;
+    padding: 30px 15px;
+    border: 1px solid #E8E8E8;
+    border-radius: 10px 10px 0 0;
+}
+.comentarios-enter input{
+    border: none;
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    border-bottom: 1px solid gray;
+}
+.comentarios-enter button{
+    border: none;
+    padding: 15px;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.comentarios-pessoas{
+    background-color: rgb(231, 231, 231);
+    padding: 30px;
+    border-radius: 0px 0px 20px 20px;
+}
+.cometario{
+    padding: 15px;
+    border-radius: 20px;
+}
+.comentario-usuario{
+    display: block;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 20px;
+}
+.comentario-usuario-foto{
+    height: 45px;
+    width: 45px;
+    background-color: orange;
+    border-radius: 50%;
+}
+.comentario-usuario-div-nickname{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-left: 10px;
+}
+.comentario-usuario-div-nickname h5{
+    font-size: 10px;
+}
+.comentario-usuario-div-nickname a{
+    color: gray;
+    margin-top: 10px;
+    font-size: 10px;
+}
+.comentario-usuario-div-nickname a:hover,.comentario-usuario-mensagem a:hover{
+    text-decoration: underline;
+}
+.comentario-usuario-mensagem{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50px;
+    font-size: 12px;
+}
+.comentario-usuario-mensagem a{
+    color: rgb(51, 158, 230);
+    margin-left: 25px;
+}
+
+.tipo-roupa{
+    background-color: transparent;
+    font-size: 18px;
+    width: 125px;
+}
+
+#filtrar{
+    padding: 15px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: gray;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+#filtrar:hover{
+    background-color: rgb(201, 201, 201);
+    color: black;
+}
+#redefinir{
+    color: black;
+}
+#redefinir:hover{
+    color: gray;
+    text-decoration: underline;
+}
+@media(max-width:576px){
+    header{
+        padding: 15px 0;
+    }
+    header h1{
+        text-align: left;
+        margin-left: 15px;
+    }
+
+    .container-loja{
+        display: block;
+    }
+    .container-produtos{
+        margin: 0;
+        width: 100%;
+    }
+
+    .produto{
+        width: 180px;
+        height: 296px;
+    }
+    .categorias{
+        margin: 50px 0;
+        align-items: left;
+    }
+    .categorias .categoria-produto .div-size{
+        width: 10px;
+        height: 10px;
+    }
+    .categorias .categoria-produto h3{
+        font-size: 15px;
+    }
+    .searchInput{
+        width: 95%;
+        margin-bottom: 50px;
+        margin-left: 15px;
+    }
+    .linkssaibamais{
+        height: 230px;
+    }
+    .linkssaibamais .texto{
+        margin-top: 25px;
+    }
+    .linkssaibamais .texto h2{
+        font-size:25px;
+    }
+    .linkssaibamais .texto h4{
+        font-size: 10px;
+    }
+    .produto-buttom div .imagem-produto-destaque{
+        width: 100%;
+        height: 170px;
+    }
+    .produto-button #dados{
+        margin:10px 0;
+    }
+    .produto-buttom #dados h3{
+        font-size: 15px;
+    }
+    .produto-buttom #dados p{
+        font-size: 20px;
+    }
+    #em-destaque{
+        font-size: 20px;
+        margin-left: 15px;
+    }
+    
+    .filtro{
+        width: 100%;
+        height: 355px;
+        /*background-color: transparent;*/
+        padding: 0;
+        margin: 0;
+        margin-top: 15px;
+        align-items: center;
+        text-align: left;
+        background-color: transparent;
+    }
+    .filtro div{
+        width: 100%;
+    }
+    .filtro h2{
+        font-size: 20px;
+    }
+    .preco-escolha{
+        display: flex;
+        justify-content: space-between;
+    }
+    #tipo-moeda{
+        display: none;
+    }
+    #valorInputRange{
+        text-align: right;
+    }
+    .filtro div select,.filtro div input,.filtro div h2,.filtro div h3{
+        margin: 0;
+    }
+    .itens{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media(max-width:992px){
+    header{
+        padding: 15px 0;
+    }
+    header h1{
+        text-align: left;
+        margin-left: 15px;
+    }
+
+    .container-loja{
+        display: block;
+    }
+    .container-produtos{
+        margin: 0;
+        width: 100%;
+    }
+
+    .produto{
+        width: 175px;
+        height: 296px;
+    }
+    .categorias{
+        margin: 50px 0;
+        align-items: left;
+    }
+    .categorias .categoria-produto .div-size{
+        width: 10px;
+        height: 10px;
+    }
+    .categorias .categoria-produto h3{
+        font-size: 15px;
+    }
+    .searchInput{
+        width: 95%;
+        margin-bottom: 50px;
+        margin-left: 15px;
+    }
+    .linkssaibamais{
+        height: 230px;
+    }
+    .linkssaibamais .texto{
+        margin-top: 25px;
+    }
+    .linkssaibamais .texto h2{
+        font-size:25px;
+    }
+    .linkssaibamais .texto h4{
+        font-size: 10px;
+    }
+    .produto-buttom div .imagem-produto-destaque{
+        width: 100%;
+        height: 170px;
+    }
+    .produto-button #dados{
+        margin:10px 0;
+    }
+    .produto-buttom #dados h3{
+        font-size: 15px;
+    }
+    .produto-buttom #dados p{
+        font-size: 20px;
+    }
+    #em-destaque{
+        font-size: 20px;
+        margin-left: 15px;
+    }
+    
+    .filtro{
+        width: 100%;
+        height: 355px;
+        /*background-color: transparent;*/
+        padding: 0;
+        margin: 0;
+        margin-top: 15px;
+        align-items: center;
+        text-align: left;
+        background-color: transparent;
+    }
+    .filtro div{
+        width: 100%;
+    }
+    .filtro h2{
+        font-size: 20px;
+    }
+    .preco-escolha{
+        display: flex;
+        justify-content: space-between;
+    }
+    #tipo-moeda{
+        display: none;
+    }
+    #valorInputRange{
+        text-align: right;
+    }
+    .filtro div select,.filtro div input,.filtro div h2,.filtro div h3{
+        margin: 0;
+    }
+    .itens{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

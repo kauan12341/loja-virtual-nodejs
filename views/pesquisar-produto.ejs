@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Roupas, utencilios, etc.</title>
+</head>
+<body>
+    <header>
+        <a href="/"><h1>Loja Virtual</h1></a>
+    </header>
+    <div class="container-loja">
+        <form class="filtro" action="/produtos/resultados" method="POST">
+            <div class="preco-escolha">
+                <h2>Preço</h2>
+                <br>
+                <div style="display: flex;">
+                    <input type="range" min="10" max="300" value="300" class="valor-contado" name="valorcontado" onmousemove="rangeSlide()">
+                    <h3 id="tipo-moeda" style="margin-right: 10px;">R$ </h3>
+                    <h3 id="valorInputRange">300</h3>
+                </div>
+            </div>
+            <br>
+            <div class="display-flex">
+                <h2>Tamanho</h2>
+                <select name="tamanho">
+                    <option value="PP">PP</option>
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G" selected>G</option>
+                    <option value="GG">GG</option>
+                    <option value="XGG">XGG</option>
+                </select>
+            </div>
+            <br>
+            <div class="display-flex">
+                <div class="display-flex-column-center">
+                    <h3>Roupa</h3>
+                </div>
+                <select class="tipo-roupa display-flex-column-center" name="roupa">
+                    <option value="calcao">Calção</option>
+                    <option value="calca">Calça</option>
+                    <option value="camisa">Camisa</option>
+                    <option value="camiseta" selected>Camiseta</option>
+                    <option value="regata">Regata</option>
+                    <option value="saia">Saia</option>
+                    <option value="vestido">Vestido</option>
+                    <option value="bone">Boné</option>
+                    <option value="pulsera">Pulsera</option>
+                    <option value="colar">Colar</option>
+                    <option value="anel">Anel</option>
+                    <option value="brinco">Brinco</option>
+                    <option value="cueca">Cueca</option>
+                    <option value="calcinha">Calcinha</option>
+                    <option value="sutia">Sutiã</option>
+                    <option value="bikini">Bikini</option>
+                    <option value="tenis">Tênis</option>
+                    <option value="sandalia">Sandalia</option>
+                    <option value="sapatilha">Sapatilha</option>
+                    <option value="sapato">Sapato</option>
+                    <option value="gravata">Gravata</option>
+                    <option value="terno">Terno</option>
+                    <option value="chapeu">Chapéu</option>
+                    <option value="gorro">Gorro</option>
+                    <option value="casaco">Casaco</option>
+                    <option value="jaqueta">Jaqueta</option>
+                    <option value="blusinha">Blusinha</option>
+                    <option value="conjunto">Conjunto (mais de uma roupa)</option>
+                </select>
+            </div>
+            <br>
+            <div class="display-flex">
+                <div class="display-flex-column-center">
+                    <h3>Estilo</h3>
+                </div>
+                <select class="tipo-roupa display-flex-column-center" name="estilo">
+                    <option value="passeio">Passeio</option>
+                    <option value="trabalho">Trabalho</option>
+                    <option value="praia">Praia</option>
+                    <option value="nevasca">Nevasca</option>
+                    <option value="caminhada">Caminhada</option>
+                    <option value="rodeio">Rodeio</option>
+                    <option value="rasgado">Meio Rasgado</option>
+                </select>
+            </div>
+            <br>
+            <div class="display-flex">
+                <div class="display-flex-column-center">
+                    <h3>Gênero</h3>
+                </div>
+                <select class="tipo-roupa display-flex-column-center" name="genero">
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select>
+            </div>
+            <div style="display: block; text-align:center; margin-top: 25px;">
+                <button type="submit" id="filtrar">Filtrar</button>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="/produtos" id="redefinir">Redefinir filtros</a>
+            </div>
+        </form>
+        <div class="container-produtos">
+            <form action="/produtos/pesquisados" class="searchInput" method="POST">
+                <input type="text" name="searchinput" placeholder="O que você esta procurando?">
+                <button type="submit"><img src="/img/lupa.png" height="15"></button>
+            </form>
+        <h3 style="margin-bottom: 25px; color: rgb(87, 87, 87);">inicio / roupas</h3>
+            <div class="itens">
+                <% for(var i = 0; db.length > i; i++){ %>
+                <form action="<%= db[i].links_afiliados %>" method="POST" class="produto">
+                    <button  type="submit" class="produto-buttom" name="produto" value="<%= db[i].id %>">
+                        <div style="height: 100%;width: 100%;">
+                            <div class="imagem-produto-destaque"><div style="width:100%;height:100%; background-image:url('<%= db[i].imagem_do_produto %>');background-position:center; background-size: contain;background-repeat: no-repeat;"></div></div>
+                            <div id="dados">
+                                <p style="color: gray; font-size: 15px;text-align: center;width: 100%; margin: 0;"><%= db[i].marca_de_roupa %></p>
+                                <h3 style="height: 10px;"><%= db[i].nome_do_produto %></h3>
+                                <br><br><br>
+                                <p>R$ <%= db[i].preco  %></p>
+                                <!--<h5>ou 12x de R$ <%= db[i].preco_parcelado %></h5>-->
+                            </div>
+                        </div>
+                    </button>
+                </form>
+                <% }; %>
+            </div>
+        </div>
+        
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

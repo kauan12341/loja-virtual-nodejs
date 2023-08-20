@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-slider.css">
+    <title>Roupas, utencilios, etc.</title>
+</head>
+<body>
+    <header>
+        <a href="/"><h1>Loja Virtual</h1></a>
+    </header>
+    <div class="container">
+        <form action="/produtos/pesquisados" class="searchInput" method="POST">
+            <input type="text" name="searchinput" placeholder="O que você esta procurando?">
+            <button type="submit"><img src="/img/lupa.png" height="15"></button>
+        </form>
+            <div class="slider">
+                <div class="slider-size">
+                    <div class="slide">
+                        <div class="imagem" style="background-image:url('/img/R.jpg');background-position:center; background-size: cover;background-repeat: no-repeat;"></div>
+                        <div class="texto">
+                            <h2>Compre nossa bolsa</h2>
+                            <h4>Agora antes que seja tarde!</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-size">
+                    <div class="slide">
+                        <div class="imagem" style="background-image:url('/img/R.jpg');background-position:center; background-size: cover;background-repeat: no-repeat;"></div>
+                        <div class="texto">
+                            <h2>Compre nossa bolsa</h2>
+                            <h4>Agora antes que seja tarde!</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-size">
+                    <div class="slide">
+                        <div class="imagem" style="background-image:url('/img/R.jpg');background-position:center; background-size: cover;background-repeat: no-repeat;"></div>
+                        <div class="texto">
+                            <h2>Compre nossa bolsa</h2>
+                            <h4>Agora antes que seja tarde!</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-size">
+                    <div class="slide">
+                        <div class="imagem" style="background-image:url('/img/R.jpg');background-position:center; background-size: cover;background-repeat: no-repeat;"></div>
+                        <div class="texto">
+                            <h2>Compre nossa bolsa</h2>
+                            <h4>Agora antes que seja tarde!</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-size">
+                    <div class="slide">
+                        <div class="imagem" style="background-image:url('/img/R.jpg');background-position:center; background-size: cover;background-repeat: no-repeat;"></div>
+                        <div class="texto">
+                            <h2>Compre nossa bolsa</h2>
+                            <h4>Agora antes que seja tarde!</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="oferta">
+            <div style="height: 150px;width: 320px; background-color: gray; padding: 30px;">
+                <h3 style="font-size: 30px;">Calçados 70% off</h3>
+            </div>
+            <div style="height: 150px;width: 320px; background-color: gray; padding: 30px;">
+                <h3 style="font-size: 30px;">Calçados 70% off</h3>
+            </div>
+            <div style="height: 150px;width: 320px; background-color: gray; padding: 30px;">
+                <h3 style="font-size: 30px;">Calçados 70% off</h3>
+            </div>
+            <div style="height: 150px;width: 320px; background-color: gray; padding: 30px;">
+                <h3 style="font-size: 30px;">Calçados 70% off</h3>
+            </div>
+        </div>
+        -->
+        <div class="categorias">
+            <a href="/produtos">
+                <div class="categoria-produto">
+                    <div class="camiseta div-size"></div>
+                    <h3>Camisetas</h3>
+                </div>
+            </a>
+            <a href="/produtos">
+                <div class="categoria-produto">
+                    <div class="calca div-size"></div>
+                    <h3>calças</h3>
+                </div>
+            </a>
+            <a href="/produtos">
+                <div class="categoria-produto">
+                    <div class="calcao div-size"></div>
+                    <h3>Calções</h3>
+                </div>
+            </a>
+            <a href="/produtos">
+                <div class="categoria-produto">
+                    <div class="vestido div-size"></div>
+                    <h3>Vestidos</h3>
+                </div>
+            </a>
+            <a href="/produtos">
+                <div class="categoria-produto">
+                    <div class="calcado div-size"></div>
+                    <h3>Calçados</h3>
+                </div>
+            </a>
+            <a href="/produtos">
+                <div class="categoria-produto">
+                    <div class="regata div-size"></div>
+                    <h3>Regatas</h3>
+                </div>
+            </a>
+        </div>
+        <a href="/produtos"><h2 id="em-destaque">Em Destaque</h2></a>
+        <div class="destaque">
+            <br><br><br>
+            <% for(var i = 0; db.length > i; i++){ %>
+                <form action="<%= db[i].links_afiliados %>" method="POST" class="produto">
+                    <button  type="submit" class="produto-buttom" name="produto" value="<%= db[i].id %>">
+                        <div>
+                            <div class="imagem-produto-destaque" style="background-image:url('<%= db[i].imagem_do_produto %>');background-position:center; background-size: contain;background-repeat: no-repeat;"></div>
+                            <div id="dados">
+                                <p style="color: gray; font-size: 15px;text-align: center;width: 100%; margin: 0;"><%= db[i].marca_de_roupa %></p>
+                                <h3 style="height: 10px;"><%= db[i].nome_do_produto %></h3>
+                                <br><br><br>
+                                <p>R$ <%= db[i].preco  %></p>
+                                <!--<h5>ou 12x de R$ <%= db[i].preco_parcelado %></h5>-->
+                            </div>
+                        </div>
+                    </button>
+                </form>
+            <% }; %>
+        </div>
+        <div class="linkssaibamais">
+            <div class="image"></div>
+            <div class="texto">
+                <h2>Veja mais descontos em nossa loja virtual!</h2>
+                <h4>Saiba mais clicando aqui!</h4>
+            </div>
+        </div>
+    </div>
+    <footer>
+        
+    </footer>
+    <script src="/js/script-slider.js"></script>
+</body>
+</html>
