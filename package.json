@@ -4,7 +4,8 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "vercel-build":"npx nodemon migrate deploy"
   },
   "author": "",
   "license": "ISC",
