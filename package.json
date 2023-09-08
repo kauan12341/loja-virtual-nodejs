@@ -5,6 +5,7 @@
   "main": "script.js",
   "scripts": {
     "start": "nodemon index.js",
+    "dev":"nodemon index.js",
     "vercel-build":"npx nodemon migrate deploy"
   },
   "author": "",
